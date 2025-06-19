@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Application Form For Cabin Crew International Batch</title>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    form {
+      background: #e6f2ff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div style="text-align:center; margin-bottom: 20px;">
+    <img src="airblue_logo.png" alt="Airblue Logo" style="max-width: 200px;">
+  </div>
+
+  <h2 style="text-align:center;">Application Form For Cabin Crew International Batch</h2>
+
+  <form id="cabinCrewForm">
+    <h3 style="text-align:center; color:#194476;">Personal Information</h3>
+    <label>Full Name</label><input type="text" name="full_name" required>
+    <label>Father's Name</label><input type="text" name="father_name" required>
+    <label>Date of Birth</label><input type="date" name="dob" required>
+    <label>CNIC Number</label><input type="text" name="cnic" required>
+    <label>Mobile Number</label><input type="tel" name="mobile" required>
+    <label>Email</label><input type="email" name="email" required>
+    <label>Current Address</label><input type="text" name="address" required>
+    <label>City</label><input type="text" name="city" required>
+    <label>Province</label><input type="text" name="province" required>
+    <label>Nationality</label><input type="text" name="nationality" required>
+
+    <h3 style="text-align:center; color:#194476;">Education, Training and Skills</h3>
+    <label>Highest Level of Education</label><input type="text" name="education" required>
+    <label>Institution Name</label><input type="text" name="institution" required>
+    <label>Degree / Certification</label><input type="text" name="degree" required>
+    <label>Languages Spoken</label><input type="text" name="languages" required>
+    <label>Technical Skills</label><input type="text" name="skills">
+
+    <h3 style="text-align:center; color:#194476;">Work Experience</h3>
+    <label>Company Name</label><input type="text" name="company_name">
+    <label>Job Title</label><input type="text" name="job_title">
+    <label>Duration</label><input type="text" name="job_duration">
+    <label>Key Responsibilities</label><textarea name="responsibilities"></textarea>
+
+    <h3 style="text-align:center; color:#194476;">Professional and Personal References</h3>
+    <label>Reference Name</label><input type="text" name="reference_name">
+    <label>Reference Contact</label><input type="text" name="reference_contact">
+    <label>Relationship</label><input type="text" name="reference_relationship">
+
+    <h3 style="text-align:center; color:#194476;">Attach Files</h3>
+    <h3 style="text-align:center; color:#194476;">Upload your recent photographs in full with different backgrounds and attires</h3>
+    <label>Upload your 1st Picture</label><input type="file" name="photo_1">
+    <label>Upload your 2nd Picture</label><input type="file" name="photo_2">
+    <label>Upload your 3rd Picture</label><input type="file" name="photo_3">
+    <label>Upload your 4th Picture</label><input type="file" name="photo_4">
+    <label>Upload your 5th Picture</label><input type="file" name="photo_5">
+    <label>Upload CNIC Picture</label><input type="file" name="cnic_picture">
+    <label>Upload Resume</label><input type="file" name="resume_picture">
+
+    <button type="submit">Submit Application</button>
+  </form>
+
+  <script type="text/javascript">
+    emailjs.init("EeAUPGgDAIQOdHFX3");
+
+    document.getElementById("cabinCrewForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      emailjs.sendForm("service_0atj9mn", "template_0wvofen", this)
+        .then(function(response) {
+          alert("Form submitted successfully!");
+        }, function(error) {
+          alert("Form submission failed. Please try again.");
+        });
+    });
+  </script>
+</body>
+</html>
+
